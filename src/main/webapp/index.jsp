@@ -8,5 +8,6 @@
     <h1>Hello from Lab2</h1>
     <p>Deploye automatiquement via CodePipeline + CodeBuild + CodeDeploy ✅</p>
   <p>slo: finished</p>
+ <p>slo: hi</p>
 </body>
 </html>
