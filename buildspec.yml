@@ -4,9 +4,16 @@ phases:
     runtime-versions:
       java: corretto8
     commands:
-      - yum install -y maven
+      # Le paquet 'maven' des depots amzn2 est trop vieux (3.0.5) pour les plugins du pom.
+      # On installe un Maven moderne compatible (>= 3.2.5).
+      - MAVEN_VERSION=3.9.9
+      - curl -fsSL "https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz" -o /tmp/maven.tar.gz
+      - tar -xzf /tmp/maven.tar.gz -C /opt
+      - export PATH=/opt/apache-maven-${MAVEN_VERSION}/bin:$PATH
   build:
     commands:
+      - export PATH=/opt/apache-maven-3.9.9/bin:$PATH
+      - mvn -version
       - mvn clean install
       - mvn package
       - mkdir output
@@ -16,7 +23,6 @@ artifacts:
   files:
     - output/*.war
     - appspec.yml
-    - scripts/*
     - install_dependencies.sh
     - start_server.sh
     - stop_server.sh
