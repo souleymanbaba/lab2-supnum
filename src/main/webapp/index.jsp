@@ -9,5 +9,5 @@
     <p>Deploye automatiquement via CodePipeline + CodeBuild + CodeDeploy ✅</p>
   <p>slo: finished</p>
  <p>slo: hi</p>
-</body>
+  <p>trigger V2 test 001156</p></body>
 </html>
