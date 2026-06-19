@@ -8,6 +8,7 @@
     <h1>Hello from Lab2</h1>
     <p>Deploye automatiquement via CodePipeline + CodeBuild + CodeDeploy ✅</p>
   <p>slo: finished</p>
+  <p>slo: test</p>
  <p>slo: hi</p>
   <p>trigger V2 test 001156</p></body>
 </html>
